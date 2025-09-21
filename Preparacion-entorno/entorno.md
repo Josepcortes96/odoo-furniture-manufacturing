@@ -1,4 +1,7 @@
-# DOCKER
+# PREPARACIÓN DEL ENTORNO.
+
+## DOCKER
+
 
 -Para no tener que descargarnos todo el core de Odoo, desde su repositorio en nuestro ordenador. Vamos a crear 3 servicios distintos.
 
