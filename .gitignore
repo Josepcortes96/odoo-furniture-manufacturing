@@ -1,6 +1,6 @@
 # Logs
 *.log
-
+*.conf
 # Archivos temporales de Python
 __pycache__/
 *.pyc
