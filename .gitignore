@@ -1,0 +1,17 @@
+# Logs
+*.log
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Configuración de editores
+.vscode/
+.idea/
+
+# Carpetas de sistema
+.DS_Store
+Thumbs.db
+
+# Volúmenes de Docker (no subir nunca bases de datos)
+db_data/
