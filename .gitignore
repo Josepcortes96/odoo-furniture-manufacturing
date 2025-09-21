@@ -1,6 +1,9 @@
 # Logs
 *.log
-*.conf
+
+# Configuración sensible
+odoo.conf
+
 # Archivos temporales de Python
 __pycache__/
 *.pyc
@@ -13,5 +16,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Volúmenes de Docker (no subir nunca bases de datos)
+# Volúmenes de Docker (no subir nunca bases de datos ni datos de contenedores)
 db_data/
+odoo-data/
+pgadmin_data/
