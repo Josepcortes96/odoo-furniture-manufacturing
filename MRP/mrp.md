@@ -20,56 +20,38 @@ Aqui dejo explicado y con un diagrama que he realizado para tener la mayor idea 
 
 1. Materias Primas → Producción
 
-Acción: Obtener desde (Pull).
-
-Origen: WH03/Almacenamiento.
-
-Destino: WH04/Entrada a Producción.
-📌 Permite que al lanzar una orden de producción, Odoo jale materiales desde el almacén de Materias Primas.
+    -Acción: Obtener desde (Pull).
+    -Origen: WH03/Almacenamiento.
+    -Destino: WH04/Entrada a Producción.
+    📌 Permite que al lanzar una orden de producción, Odoo jale materiales desde el almacén de Materias Primas.
 
 2. Producción (Entrada → WIP)
 
-Acción: Obtener desde.
-
-Origen: WH04/Entrada a Producción.
-
-Destino: WH04/WIP.
-📌 Simula que las materias primas entran al proceso de fabricación (semielaborados).
+    -Acción: Obtener desde.
+    -Origen: WH04/Entrada a Producción.
+    -Destino: WH04/WIP.
+    📌 Simula que las materias primas entran al proceso de fabricación (semielaborados).
 
 3. Producción (WIP → Salida Producción)
 
-Acción: Obtener desde.
-
-Origen: WH04/WIP.
-
-Destino: WH04/Salida de Producción.
-📌 Una vez terminadas, las piezas salen como producto acabado.
+    -Acción: Obtener desde.
+    -Origen: WH04/WIP.
+    -Destino: WH04/Salida de Producción.
+    📌 Una vez terminadas, las piezas salen como producto acabado.
 
 4. Producción → Productos Terminados
 
-Acción: Obtener desde.
-
-Origen: WH04/Salida de Producción.
-
-Destino: WH02/Terminados.
-📌 Mueve los productos terminados al almacén de terminados listos para venta.
+    -Acción: Obtener desde.
+    -Origen: WH04/Salida de Producción.
+    -Destino: WH02/Terminados.
+    📌 Mueve los productos terminados al almacén de terminados listos para venta.
 
 5. Terminados → Expediciones
 
-Acción: Obtener desde.
-
-Origen: WH02/Terminados.
-
-Destino: WH01/Expediciones.
-📌 Mueve el producto ya vendido hacia la zona de expedición.
-
-Ruta	Acción	Tipo de operación	Ubicación origen	Ubicación destino	Explicación
-Materias Primas → Producción	Obtener desde (Pull)	Transferencia interna	WH03/Almacenamiento	WH04/Entrada Producción	Cuando Producción necesita materias primas, las jala de Almacenamiento.
-Producción (Entrada → WIP)	Obtener desde (Pull)	Transferencia interna	WH04/Entrada Producción	WH04/WIP	Los materiales reservados entran a proceso de fabricación.
-Producción (WIP → Salida Producción)	Obtener desde (Pull)	Transferencia interna	WH04/WIP	WH04/Salida Producción	El producto pasa de “en proceso” a terminado dentro del taller.
-Producción → Terminados	Obtener desde (Pull)	Transferencia interna	WH04/Salida Producción	WH02/Terminados	Los productos acabados se trasladan al almacén de terminados.
-Terminados → Expediciones	Obtener desde (Pull)	Transferencia interna	WH02/Terminados	WH01/Expediciones	Los productos vendidos se preparan en la zona de expedición.
-Devoluciones de clientes (opcional)	Empujar a (Push)	Transferencia interna	Cliente	WH02/Devoluciones	Si un cliente devuelve un producto, este se envía a la zona de devoluciones.
+    -Acción: Obtener desde.
+    -Origen: WH02/Terminados.
+    -Destino: WH01/Expediciones.
+    📌 Mueve el producto ya vendido hacia la zona de expedición.
 
 
 **CON ESTAS RUTAS YA TENDRIAMOS EL FLUJO COMPLETO Compra → Materias Primas → Producción → Terminados → Expediciones → Cliente **
