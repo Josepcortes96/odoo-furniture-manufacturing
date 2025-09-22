@@ -8,10 +8,11 @@ En la parte de inventario vamos a configuracion Ajustes -> Almacenes y una vez q
 ![Captura paso 1](images/Almacen-create.png).
 
 En la creacion de almacenes es importante distinguir las necesidades y las capacidades de la empresa donde implantemos Odoo. En este ejemplo yo he considerado que tendra 4 Almacenes.
--Central
--Expediciones.
 -Materias Primas.
 -Producción.
+-Central
+-Expediciones.
+
 
 Esto es importante porque hay de asociar como se va a rebastecer si en compra, fabricacion o más bien con traslados entre centros. 
 Por lo tanto depende que tipo de almacén lo hara de una forma u otra. Ejemplo: El de materias primas, como esta compuesto de materias primas basicamente será mediante compras. Por otro lado el de Producción será mediante fabricación. Y el de expediciones mediante traslados del Central.
