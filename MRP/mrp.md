@@ -117,7 +117,7 @@ Una vez hemos terminado con las ordenes, procedemos a las ordenes de fabricació
 ![Captura paso 1](images/Comprobar.png).
 
 
-
+**AHORA VAMOS A VER EL SIGUIENTE PASO QUE ES LAS VENTAS, PARA PODER AUMENTAR ESTE FLUJO**
 
 
 
