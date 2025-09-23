@@ -21,35 +21,35 @@ Aqui dejo explicado y con un diagrama que he realizado para tener la mayor idea 
 1. Materias Primas → Producción
 
     -Acción: Obtener desde (Pull).
-    -Origen: WH03/Almacenamiento.
-    -Destino: WH04/Entrada a Producción.
+    -Origen: WH01/Materia prima.
+    -Destino: WH01/Producción.
     📌 Permite que al lanzar una orden de producción, Odoo jale materiales desde el almacén de Materias Primas.
 
-2. Producción (Entrada → WIP)
+2. Producción-> Semielaborados
+
+    -Acción: Empujar a .
+    -Origen: WH01/Producción.
+    -Destino: WH01/Semielaborados.
+    📌 Simula que las materias primas  han terminado el proceso de fabricación (semielaborados) y se les envia a su ubicación.
+
+3. Semielaborados -> Producción 
 
     -Acción: Obtener desde.
-    -Origen: WH04/Entrada a Producción.
-    -Destino: WH04/WIP.
-    📌 Simula que las materias primas entran al proceso de fabricación (semielaborados).
+    -Origen: WH01/Semielaborados.
+    -Destino: WH01/Producción.
+    📌 Los productos semielaborados osn llevados a producción para montar un producto acabado.
 
-3. Producción (WIP → Salida Producción)
+4. Producción → Productos acabado
 
-    -Acción: Obtener desde.
-    -Origen: WH04/WIP.
-    -Destino: WH04/Salida de Producción.
-    📌 Una vez terminadas, las piezas salen como producto acabado.
-
-4. Producción → Productos Terminados
-
-    -Acción: Obtener desde.
-    -Origen: WH04/Salida de Producción.
-    -Destino: WH02/Terminados.
+    -Acción: Empujar a .
+    -Origen: WH01/Producción.
+    -Destino: WH01/Producto Acabado.
     📌 Mueve los productos terminados al almacén de terminados listos para venta.
 
-5. Terminados → Expediciones
+5. Producto acabado → Expediciones
 
     -Acción: Obtener desde.
-    -Origen: WH02/Terminados.
+    -Origen: WH01/Producto acabado.
     -Destino: WH01/Expediciones.
     📌 Mueve el producto ya vendido hacia la zona de expedición.
 
@@ -94,11 +94,31 @@ En nuestra configuración del almacen, los semielaborados van en una ubicación 
 
 -A continuación, vamos a proceder a crear las ordenes de fabricación. En las ordenes de fabricación, más adelante vamos a enlazar con los pedidos, marcan cuantas unidades se tienen de fabricar. Más bien dicho, se pasa el pedido a la fabrica para que lo fabriquen.
 
+-Primero de todo vamos a seleccionar el articulo que queremos, alli se nos va a desplegar el BoM.
 ![Captura paso 1](images/MO.png).
+-Siguiente paso cuando vemos que esta todo correcto es darle a confirmar. Nos va a crear un numero de secuencia en automaticamente que va a ser el numero de la orden. 
+-Vamos a seleccionar los componentes y vamos a pulsar si hay disponibilidad 
 ![Captura paso 1](images/MO-1.png).
-![Captura paso 1](images/MO-2.png).
-![Captura paso 1](images/ot-activate.png).
-![Captura paso 1](images/oT-OK.png).
+
+-Una vez hemos visto que hay disponibilidad, vamos a proceder a pulsar planificar, para que se pongan en marcha las Ordenes de trabajo.
+
+-Vamos a la seccion Ordenes-> Ordenes de trabajo. Y allí, vamos a ver todas las ordenes de trabajo que hay. Si pone listo como es nuestro caso, singnifica que ya estan preparados los componentes, es decir que ya estan en la ubicacion preparados para montar. Si no fuera el caso se tendría que realizar un traslado, o la ruta  no estaría bien configurada.
+
+-Le damos a empezar las ordenes y veremos que empieza un contador, es una simulación del tiempo que tarda en hacerse la orden. Como antes en los centros de trabajo hemos establecido que se calcule el timepo de media en base a las ultimas 4.
+![Captura paso 1](images/OT.png).
+-Le damos a listo, ya que estamos en una demo
+
+Una vez hemos terminado con las ordenes, procedemos a las ordenes de fabricación y vamos a ver que pone a cerrar. JUstamente entramos y pulsamos producir todo, así Odoo va a hacer los traslados de stock. Restar materias primas, sumar o restar productos semiterminados y/o sumar productos acabados. 
+
+![Captura paso 1](images/CerrarMO.png).
+
+**Finalmente vamos a comprobar si se ha creado el producto acabado ***
+
+![Captura paso 1](images/Comprobar.png).
+
+
+
+
 
 
 
