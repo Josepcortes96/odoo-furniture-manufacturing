@@ -65,12 +65,41 @@ Como será un flujo la gran mayoria serán pulls Obtener desde. Excptuando el de
 ![Captura paso 1](images/ruta-definida.png).
 
 
-## .
+## .BoM
+
+Antes de adentrarnos en las ordenes de fabricación y en las ordenes de trabajo, nos vamos a centrar en el BoM. El BoM es la descomposición de un producto.
+Es decir, de los materiales que componen un producto. Menos la materia prima todos tendran un BoM. Por ejemplo, los semielaborados aunque no sean vendibles directamente. Estan compuestos por varios elementos de Materia prima.
+En nuestro caso, hemos definido las piezas barnizadas, y su BoM es un tablero cortado y 1 litro de Barníz. El tablero cortado hemos definido que se hacer mediante 5m de madera de roble para conseguir 1 metro.
 
 
+En Fabricación -> Productos -> Lista Materiales vamos a encontrar para hacer el BoM.
+
+**Hay que tener presente que todo en una industria son flujos de procesos. De la materia prima, se preparar semielaborados, estos van a ser los que compongan los productos acabados listos para la venta**
+
+![Captura paso 1](images/Creacion-bom.png).
+
+Mientras asignamos el BoM, tambien vamos a preparar las "Operaciones" que son las accioens que se realizarán en los puestos de trabajo para elaborar el material. Cuando hemos definido los materiales y la cantidad en cada BoM. Vamos a proceder a las operaciones. 
 
 
+![Captura paso 1](images/Operaciones.png).
 
-## .
+Aqui en las operaciones vamos a definir la acción que se hace en cada lugar de trabajo y el tiempo estimado que se tarda en realizar la acción.
+
+Posteriormente en los BoMs vamos a definir que tipo de operación tiene el BoM. Es importante, ya que nos sirve para indicar si estamos fabricando un semielaborado o un producto acabado.
+En nuestra configuración del almacen, los semielaborados van en una ubicación y los productos acabados van en otra.
+
+## .MO(ORDEN FABRICACIÓN) WO(ORDEN DE TRABAJO).
+
+-Las siglas MO -> significa manufacturing order -> orden de fabricación y WO -> work order -> orden de trabajo.
+
+-A continuación, vamos a proceder a crear las ordenes de fabricación. En las ordenes de fabricación, más adelante vamos a enlazar con los pedidos, marcan cuantas unidades se tienen de fabricar. Más bien dicho, se pasa el pedido a la fabrica para que lo fabriquen.
+
+![Captura paso 1](images/MO.png).
+![Captura paso 1](images/MO-1.png).
+![Captura paso 1](images/MO-2.png).
+![Captura paso 1](images/ot-activate.png).
+![Captura paso 1](images/oT-OK.png).
+
+
 
 

@@ -7,11 +7,9 @@ Antes de dedicarnos a crear stock, la parte primordial es crear los almacenes. P
 En la parte de inventario vamos a configuracion Ajustes -> Almacenes y una vez que estamos allí procederemos a crear nuestros 4 Almacenes.
 ![Captura paso 1](images/Almacen-create.png).
 
-En la creacion de almacenes es importante distinguir las necesidades y las capacidades de la empresa donde implantemos Odoo. En este ejemplo yo he considerado que tendra 4 Almacenes.
+En la creacion de almacenes es importante distinguir las necesidades y las capacidades de la empresa donde implantemos Odoo. En este ejemplo yo he considerado que tendra 1 Almacenes.
+
 -Materias Primas.
--Producción.
--Central
--Expediciones.
 
 
 Esto es importante porque hay de asociar como se va a rebastecer si en compra, fabricacion o más bien con traslados entre centros. 
@@ -33,26 +31,6 @@ Para entender un poco el procedimiento he dividio mis almacenes de la siguiente 
     -WH01/Expediciones.
 
 Es el almacén general de la empresa, desde donde se divide todo. Se almacenan materias primas terminados, se realizan pickings.  
-
-**-MueblesCOrtes -- Expediciones.(WH02)**
-
-    -WH02/Terminados → mesas, sillas, armarios listos para vender.
-    -WH02/Devoluciones → productos defectuosos devueltos por clientes.
-
-**-MueblesCOrtes -- Materias Primas.(WH03)**
-
-    -WH03/Recepción → donde entran compras.
-    -WH03/Almacenamiento → stock de madera, tornillos, barniz.
-    -WH03/Calidad → inspección de materiales defectuosos.(Poner ubicación de deshecho)
-
-**-MueblesCOrtes -- Materias Producción.(WH04)**
-
-    -WH04/Entrada a Producción → materias primas que se van a usar.
-
-    -WH04/WIP (En proceso) → semielaborados (tablero cortado, piezas barnizadas).
-
-    -WH04/Salida de Producción → productos ya ensamblados, listos para terminar.
-
 
 Creación de ubicaciones. Es importante decir que tipo de ubicación es.
 
@@ -128,3 +106,5 @@ Finalmente vemos en el stock.
 
 ![Captura paso 1](images/lista-stock.png).
 
+
+**CUANDO HAYAMOS CREADO LOS PRODUCTOS VAMOS A PONER SU UBICACION EN WH01. SEGUN EL TIPO DE PRODUCTO QUE SEA IRA EN UNA UBICACIÓN U OTRA**
