@@ -9,7 +9,7 @@ Una vez estamos en el modulo le damos a nuevo y procedemos a crear el cliente.
 
 **Dirección de facturación**-> Dirección secundaria vinculada, es el lugar donde evia las facturas.
 **Compañia** -> Entidad principal, contiene los datos generales y es donde se crean los pedidos de venta
-![Captura paso 1](images/crear.png).
+![Captura paso 1](images/Crear.png).
 
 Después de crear varios clientes, vamos a verificar si se han creado bien en la lista. 
 
@@ -23,35 +23,20 @@ Una vez tenemos configurado la base,v amos a procoder a generar los pedidos.
 Ventas -> Pedidos -> Pedido.
 ![Captura paso 1](images/Crear-pedido.png).
 
-Para crear los usuarios nos dirijimos a menu Aplicaciones Ajustes, justamente en la parte izquierda donde podemos ver el cuadrado.
+Procedemos a crear el nuevo pedido. Elejimos el cliente que va a realizar el pedido, después añadimos en la linea los productos que va a tener el pedido, una vez esta añadido el producto y su cantidad, entonces confirmaremos.
 
-Una vez alli vamos a usuarios y compañias en el apartado de Usuarios. Nos vamos a encontrar con la lista de usuarios, por defecto, vamos a encontrar dos el nuestro y uno de prueba. Eliminamos ese usuario.
+**IMPORTANTE--> Al confirmar, Odoo, revisa automaticamente la tabla en la base de datos de stock. Y mirará si tenemos stock para satisfacer el pedido. Entonces si hay suficiente stock pasará directamente el pedido a la siguiente fase. Pero si no, creará automaticamente una MO.**
 
-Cuando hayamos realizado este paso vamos a crear los usuarios. Arriba donde pone nuevo.
+-Por eso, para ver el proceso en la demo, vamos a crear un pedido donde no tengamos stock y se tenga de fabricar para realizar todo el flujo del proceso. Pedido-> Orden de fabricación -> Orden de trabajo -> Entrega -> Facturación.
+![Captura paso 1](images/Crear-pedido1.png).
 
-**IMPORTANTE**
-En la parte inferior en administracion, se tiene que poner permisos de acceso para que el usuario este capado por roles.
+Se lanza un presupuesto, y después de confirmar el presupuesto. Se realiza el pedido ficticio.
+![Captura paso 1](images/presupuesto.png).
 
-**DIFERENCIACION**
-Usuario --> Puede ver cosas del modulo validar algun apartado.
-Administrador --> Es el encargado de todo el departamento y tiene todos los permisos en ese departamento.
+Realizamos un pedido ficticio de 40 cajones. En su BoM, nos faltan tableros, por ende, si no se cortan los tableros no se podrán montar en su totalidad. Aquí vemos, que se lanzan dos MO, la de tableros y posteriormente la de los cajones.
 
-![Captura paso 1](images/creacion-user.png).
+![Captura paso 1](images/MO.png).
 
-Una vez hemos creado a todos los usuarios con todos los permisos, vamos a ver que estan en la lista. Y procederemos a darles contraseña a cada uno. 
+Consecutivamente a la que planificamos las MO, se ordenan las ordenes de trabajo.
+![Captura paso 1](images/MO-2.png).
 
-![Captura paso 1](images/list-user.png).
-
-![Captura paso 1](images/contra-user.png).
-
-Una vez le damos contraseña al usuario. Vamos a testear que los permisos estan bien configurados.
--Cerramos nuestra sesion y intentamos acceder desde el que hemos asignado la contraseña.
-
-
-![Captura paso 1](images/test-user.png).
-
-Podemos ver en la siguiente imagen como el usuario Carla Vazquez cvazquez@mueblescortes.com. 
-
-Quien tiene el rol de comercial, solamente puede ver la parte de ventas y de facturación. Tal y como se le ha asignado.
-
-![Captura paso 1](images/cvazquez-user.png).
