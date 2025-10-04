@@ -18,6 +18,10 @@ Reabastecimiento (MRP) → El sistema analiza stock, pedidos y niveles mínimos 
 
 Entrega al cliente → Se despachan los productos, se genera la factura y el ERP actualiza contabilidad e inventario.
 
-## INformación.
+## Información.
 
 Este repositorio es claramente para establecer una guia en un ejemplo real.
+
+## Estructura del repositorio.
+
+El repositorio estará basado en la división en carpetas de cada Flujo
